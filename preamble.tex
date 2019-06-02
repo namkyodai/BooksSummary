@@ -1,0 +1,69 @@
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+
+
+\usepackage{lipsum}                     % Dummytext
+\usepackage{xargs}    
+\usepackage{amsmath,amsfonts,mathabx}
+\usepackage{epigraph}  
+
+
+\usepackage{framed}
+\usepackage{color}
+
+\newenvironment{shadequote}%
+{\begin{snugshade}\begin{quote}}
+		{\hfill\end{quote}\end{snugshade}}
+
+
+\definecolor{shadecolor}{rgb}{0.9,0.9,0.9}
+
+
+
+
+
+
+%\epigraphfontsize{\small\itshape}
+%\setlength\epigraphwidth{10cm}
+\setlength\epigraphwidth{.8\textwidth}
+\setlength\epigraphrule{0pt}
+
+
+%#this make the epigraph box with italic text
+\usepackage{etoolbox}
+\makeatletter
+\newlength\epitextskip
+\pretocmd{\@epitext}{\em}{}{}
+\apptocmd{\@epitext}{\em}{}{}
+\patchcmd{\epigraph}{\@epitext{#1}\\}{\@epitext{#1}\\[\epitextskip]}{}{}
+\makeatother
+
+
+
+
+
+
+
+                % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+% 
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+%
+
+\usepackage{blindtext} % for dummy text
+% \usepackage[margin=2cm]{geometry}   % to change margins
+% \usepackage{titling}             % Uncomment both to   
+% \setlength{\droptitle}{-2cm}     % change title position 
+
